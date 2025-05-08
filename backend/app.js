@@ -1,10 +1,12 @@
 const express = require('express');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors');
 const newsRoutes = require('./routes/news');
 const usersRoutes = require('./routes/users');
 
 app.use(express.json());
+app.use(cors());
 
 mongoose.connect("mongodb://localhost:27017/echopress")
 .then(()=>{
